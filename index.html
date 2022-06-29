@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./common/css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.js"
+    ></script>
+    <script
+      defer
+      src="./common/data/products.js"
+      type="text/javascript"
+    ></script>
+    <script defer src="./common/js/index.js"></script>
+    <script defer src="./common/js/swiper.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- header -->
+    <header class="header">
+      <div class="header__container">
+        <div class="header__main__wrapper">
+          <img src="./assets/ikea-logo.jpeg" alt="site-logo" />
+          <input
+            type="search"
+            class="input--search"
+            placeholder="검색어 입력"
+          />
+          <div class="icon__wrapper">
+            <a><i class="bi bi-person"></i></a>
+            <a><i class="bi bi-heart"></i></a>
+            <a><i class="bi bi-cart"></i></a>
+          </div>
+        </div>
+        <div class="header__nav__wrapper">
+          <ul class="header__nav--main">
+            <li><a>모든 제품</a></li>
+            <li><a>온라인 쇼룸</a></li>
+            <li><a>더 낮은 새로운 가격</a></li>
+          </ul>
+          <ul class="header__nav--pickers">
+            <li><a>우편 번호 입력</a></li>
+            <li><a>매장 선택</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main>
+      <!-- navvigation -->
+      <nav class="navigation">
+        <ol>
+          <li>
+            <a><span>새로운 소식</span></a>
+          </li>
+          <li>
+            <a><span>홈퍼니싱 솔루션</span></a>
+          </li>
+        </ol>
+      </nav>
+      <!-- content title -->
+      <section class="content-title">
+        <h1 class="text-bold">홈퍼니싱 솔루션</h1>
+        <p>
+          IKEA가 제안하는 한 박자 빠른 시즈널 홈퍼니싱을 아래에서 확인해보세요.
+        </p>
+      </section>
+
+      <!-- 지속 가능한 코너 솔루션 -->
+      <section class="section">
+        <div class="title-wrapper">
+          <div class="text-wrapper">
+            <h2 class="text-bold">지속가능한 코너 활용 솔루션</h2>
+            <p>
+              온 가족이 쉽게 분리수거하는 더 지속가능한 생활을 실천해 보세요. 집
+              안에 작은 분리수거 공간을 마련해두는 것 만으로도 모두가 효율적이게
+              쓰레기를 잘 분리해서 버릴 수 있습니다.
+            </p>
+          </div>
+          <a href="#" class="text-bold"><p>수납/정리 더 보기</p></a>
+        </div>
+        <div class="photo-wrapper">
+          <div id="photo-1" class="photo">
+            <img src="./assets/fur_0.jpg" alt="" />
+          </div>
+          <div id="photo-2" class="photo">
+            <img src="./assets/fur_0.jpg" alt="" />
+          </div>
+        </div>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <a href="javscript:void(0)" class="swiper-slide item">
+              <img src="./assets/fur_1.jpg" alt="" />
+              <div class="info-wrapper">
+                <h3 class="text-bold">
+                  <span class="info__header"> DIMPA 딤파</span>
+                  <span class="info__desc"
+                    >분리수거 가방, 22x35x45 츠/35 |</span
+                  >
+                </h3>
+                <div class="info__price text-bold">
+                  <p>9,990 <span>/3개</span></p>
+                </div>
+
+                <div class="cart-wrapper">
+                  <button class="btn-cart" onClick="javascript:void(0)">
+                    <i class="cart bi bi-basket2-fill"></i>
+                  </button>
+                  <button class="btn-heart" onClick="javascript:void(0)">
+                    <i class="heart bi bi-heart"></i>
+                  </button>
+                </div>
+              </div>
+            </a>
+            <a href="javscript:void(0)" class="swiper-slide item">
+              <img src="./assets/fur_1.jpg" alt="" />
+              <div class="info-wrapper">
+                <h3 class="text-bold">
+                  <span class="info__header"> DIMPA 딤파</span>
+                  <span class="info__desc"
+                    >분리수거 가방, 22x35x45 츠/35 |</span
+                  >
+                </h3>
+                <div class="info__price text-bold">
+                  <p>9,990 <span>/3개</span></p>
+                </div>
+
+                <div class="cart-wrapper">
+                  <button class="btn-cart" onClick="javascript:void(0)">
+                    <i class="cart bi bi-basket2-fill"></i>
+                  </button>
+                  <button class="btn-heart" onClick="javascript:void(0)">
+                    <i class="heart bi bi-heart"></i>
+                  </button>
+                </div>
+              </div>
+            </a>
+            <a href="javscript:void(0)" class="swiper-slide item">
+              <img src="./assets/fur_1.jpg" alt="" />
+              <div class="info-wrapper">
+                <h3 class="text-bold">
+                  <span class="info__header"> DIMPA 딤파</span>
+                  <span class="info__desc"
+                    >분리수거 가방, 22x35x45 츠/35 |</span
+                  >
+                </h3>
+                <div class="info__price text-bold">
+                  <p>9,990 <span>/3개</span></p>
+                </div>
+
+                <div class="cart-wrapper">
+                  <button class="btn-cart" onClick="javascript:void(0)">
+                    <i class="cart bi bi-basket2-fill"></i>
+                  </button>
+                  <button class="btn-heart" onClick="javascript:void(0)">
+                    <i class="heart bi bi-heart"></i>
+                  </button>
+                </div>
+              </div>
+            </a>
+            <a href="javscript:void(0)" class="swiper-slide item">
+              <img src="./assets/fur_1.jpg" alt="" />
+              <div class="info-wrapper">
+                <h3 class="text-bold">
+                  <span class="info__header"> DIMPA 딤파</span>
+                  <span class="info__desc"
+                    >분리수거 가방, 22x35x45 츠/35 |</span
+                  >
+                </h3>
+                <div class="info__price text-bold">
+                  <p>9,990 <span>/3개</span></p>
+                </div>
+
+                <div class="cart-wrapper">
+                  <button class="btn-cart" onClick="javascript:void(0)">
+                    <i class="cart bi bi-basket2-fill"></i>
+                  </button>
+                  <button class="btn-heart" onClick="javascript:void(0)">
+                    <i class="heart bi bi-heart"></i>
+                  </button>
+                </div>
+              </div>
+            </a>
+            <a href="javscript:void(0)" class="swiper-slide item">
+              <img src="./assets/fur_1.jpg" alt="" />
+              <div class="info-wrapper">
+                <h3 class="text-bold">
+                  <span class="info__header"> DIMPA 딤파</span>
+                  <span class="info__desc"
+                    >분리수거 가방, 22x35x45 츠/35 |</span
+                  >
+                </h3>
+                <div class="info__price text-bold">
+                  <p>9,990 <span>/3개</span></p>
+                </div>
+
+                <div class="cart-wrapper">
+                  <button class="btn-cart" onClick="javascript:void(0)">
+                    <i class="cart bi bi-basket2-fill"></i>
+                  </button>
+                  <button class="btn-heart" onClick="javascript:void(0)">
+                    <i class="heart bi bi-heart"></i>
+                  </button>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- If we need scrollbar -->
+          <div class="swiper-scrollbar"></div>
+        </div>
+      </section>
+      <!-- 우리집 겅루에 어울리는 조양 -->
+
+      <!-- 싱그러운 창가 -->
+    </main>
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="content__wrapper">
+          <div class="content--join">
+            <h3 class="content--join__title text-bold">IKEA Family</h3>
+            <p class="content--join__desc">
+              지금 IKEA Family에 무료로 가입하고<br />다양한 멤버 전용 혜택을
+              누리세요.
+            </p>
+            <a
+              href="javascript:void(0)"
+              class="content--join__link--more content--join__link"
+              >자세히 보기</a
+            >
+            <a
+              href="javascript:void(0)"
+              class="text-bold content--join__link--join content--join__link"
+              >IKEA Family 가입하기</a
+            >
+          </div>
+          <div class="content--nav">
+            <ul class="content--nav__wrapper">
+              <li class="nav">
+                <h3><span class="text-bold">고객문의</span></h3>
+                <ul>
+                  <li><a>고객지원</a></li>
+                  <li><a>자주 묻는 질문</a></li>
+                  <li><a>셀프 플래닝</a></li>
+                  <li><a>제품 구매 가이드</a></li>
+                  <li><a>결제 옵션</a></li>
+                </ul>
+              </li>
+              <li class="nav">
+                <h3><span class="text-bold">고객문의</span></h3>
+                <ul>
+                  <li><a>고객지원</a></li>
+                  <li><a>자주 묻는 질문</a></li>
+                  <li><a>셀프 플래닝</a></li>
+                  <li><a>제품 구매 가이드</a></li>
+                  <li><a>결제 옵션</a></li>
+                </ul>
+              </li>
+              <li class="nav">
+                <h3><span class="text-bold">고객문의</span></h3>
+                <ul>
+                  <li><a>고객지원</a></li>
+                  <li><a>자주 묻는 질문</a></li>
+                  <li><a>셀프 플래닝</a></li>
+                  <li><a>제품 구매 가이드</a></li>
+                  <li><a>결제 옵션</a></li>
+                </ul>
+              </li>
+              <li class="nav">
+                <h3><span class="text-bold">고객문의</span></h3>
+                <ul>
+                  <li><a>고객지원</a></li>
+                  <li><a>자주 묻는 질문</a></li>
+                  <li><a>셀프 플래닝</a></li>
+                  <li><a>제품 구매 가이드</a></li>
+                  <li><a>결제 옵션</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="sns__wrapper">
+          <div class="icon-list">
+            <i class="icon--facebook icon bi bi-facebook"></i>
+            <i class="icon--twitter icon bi bi-twitter"></i>
+            <i class="icon-insta icon bi bi-instagram"></i>
+          </div>
+          <div class="language-select">
+            <div class="language-select__wrapper">
+              <a class="language-select__link" href="javascript:void(0)"
+                ><i class="bi bi-globe"></i>
+                <p class="text-bold">국가변경</p></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="privacy-info__wrapper">
+          <p>© Inter IKEA Systems B.V 1999-2022</p>
+          <ul class="privacy-info__list">
+            <li class="privacy-info"><a>개인정보처리방침 </a></li>
+            <li class="privacy-info"><a>쿠키 정책</a></li>
+            <li class="privacy-info"><a>쿠키 설정 </a></li>
+            <li class="privacy-info"><a>웹사이트 이용약관 </a></li>
+            <li class="privacy-info"><a>Responsible disclosure</a></li>
+          </ul>
+        </div>
+        <div class="privacy-detail__wrapper">
+          <p>
+            IKEA 코리아<br />주소 : (우) 14352 경기도 광명시 일직로 17
+            IKEA광명점<br />
+            사업자 등록번호 : 106-86-82871 사업자정보확인<br />대표자 : 프레드릭
+            요한손<br />
+            통신판매업 신고 : 2018-경기광명-0209<br />TEL : 1670-4532
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
