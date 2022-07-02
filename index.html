@@ -14,17 +14,24 @@
       type="text/css"
       href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.css"
     />
+    <!-- UIkit CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/uikit@3.14.3/dist/css/uikit.min.css"
+    />
+
     <script
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.js"
     ></script>
-    <script
-      defer
-      src="./common/data/products.js"
-      type="text/javascript"
-    ></script>
+    <script src="./common/data/products.json" type="text/javascript"></script>
     <script defer src="./common/js/index.js"></script>
+    <script defer src="./common/js/offcanvas-nav.js"></script>
     <script defer src="./common/js/swiper.js"></script>
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.3/dist/js/uikit-icons.min.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -35,15 +42,26 @@
           <img src="./assets/ikea-logo.jpeg" alt="site-logo" />
           <input
             type="search"
-            class="input--search"
+            class="input--search-pc input--search"
             placeholder="검색어 입력"
           />
           <div class="icon__wrapper">
-            <a><i class="bi bi-person"></i></a>
-            <a><i class="bi bi-heart"></i></a>
-            <a><i class="bi bi-cart"></i></a>
+            <a class="header__icon"><i class="bi bi-person"></i> </a>
+            <a class="header__icon"><i class="bi bi-heart"></i></a>
+            <a class="header__icon"><i class="bi bi-cart"></i></a>
+            <a
+              href="#offcanvas-usage"
+              uk-toggle
+              class="header__icon-menu header__icon"
+              ><i class="bi bi-list"></i
+            ></a>
           </div>
         </div>
+        <input
+          type="search"
+          class="input--search-mb input--search"
+          placeholder="검색어 입력"
+        />
         <div class="header__nav__wrapper">
           <ul class="header__nav--main">
             <li><a>모든 제품</a></li>
@@ -58,7 +76,7 @@
       </div>
     </header>
     <main>
-      <!-- navvigation -->
+      <!-- navigation -->
       <nav class="navigation">
         <ol>
           <li>
@@ -69,15 +87,36 @@
           </li>
         </ol>
       </nav>
-      <!-- content title -->
-      <section class="content-title">
+      <!-- offcanvas nav -->
+      <div id="offcanvas-nav" class="overlay">
+        <a href="javascript:void(0)" id="menu-icon--close"
+          ><i class="bi bi-x-lg"></i
+        ></a>
+        <a
+          ><img id="offcanvas-nav__logo" src="./assets/ikea-logo.jpeg" alt=""
+        /></a>
+        <div class="overlay-content">
+          <a class="overlay-content__item" href="javascript:void(0)"
+            >모든 제품</a
+          >
+          <a class="overlay-content__item" href="javascript:void(0)"
+            >온라인 쇼룸</a
+          >
+          <a class="overlay-content__item" href="javascript:void(0)"
+            >더 낮은 새로운 가격</a
+          >
+        </div>
+      </div>
+
+      <!-- main title -->
+      <section class="main-title">
         <h1 class="text-bold">홈퍼니싱 솔루션</h1>
         <p>
           IKEA가 제안하는 한 박자 빠른 시즈널 홈퍼니싱을 아래에서 확인해보세요.
         </p>
       </section>
 
-      <!-- 지속 가능한 코너 솔루션 -->
+      <!-- main content -->
       <section class="section">
         <div class="title-wrapper">
           <div class="text-wrapper">
@@ -98,10 +137,18 @@
             <img src="./assets/fur_0.jpg" alt="" />
           </div>
         </div>
+        <a href="javascript:void(0)" class="view-more__wrapper">
+          <p class="view-more__text">수납/정리 더 보기</p>
+          <i class="view-more__icon bi bi-chevron-right"></i>
+        </a>
         <div class="swiper-container">
           <div class="swiper-wrapper">
             <a href="javscript:void(0)" class="swiper-slide item">
-              <img src="./assets/fur_1.jpg" alt="" />
+              <div class="img-wrapper">
+                <img src="./assets/fur_1.jpg" alt="" class="pic-first" />
+                <img src="./assets/fur_2.jpg" alt="" class="pic-second" />
+              </div>
+
               <div class="info-wrapper">
                 <h3 class="text-bold">
                   <span class="info__header"> DIMPA 딤파</span>
@@ -124,7 +171,10 @@
               </div>
             </a>
             <a href="javscript:void(0)" class="swiper-slide item">
-              <img src="./assets/fur_1.jpg" alt="" />
+              <div class="img-wrapper">
+                <img src="./assets/fur_1.jpg" alt="" class="pic-first" />
+                <img src="./assets/fur_3.jpg" alt="" class="pic-second" />
+              </div>
               <div class="info-wrapper">
                 <h3 class="text-bold">
                   <span class="info__header"> DIMPA 딤파</span>
@@ -147,7 +197,10 @@
               </div>
             </a>
             <a href="javscript:void(0)" class="swiper-slide item">
-              <img src="./assets/fur_1.jpg" alt="" />
+              <div class="img-wrapper">
+                <img src="./assets/fur_1.jpg" alt="" class="pic-first" />
+                <img src="./assets/fur_4.jpg" alt="" class="pic-second" />
+              </div>
               <div class="info-wrapper">
                 <h3 class="text-bold">
                   <span class="info__header"> DIMPA 딤파</span>
@@ -170,7 +223,10 @@
               </div>
             </a>
             <a href="javscript:void(0)" class="swiper-slide item">
-              <img src="./assets/fur_1.jpg" alt="" />
+              <div class="img-wrapper">
+                <img src="./assets/fur_1.jpg" alt="" class="pic-first" />
+                <img src="./assets/fur_5.jpg" alt="" class="pic-second" />
+              </div>
               <div class="info-wrapper">
                 <h3 class="text-bold">
                   <span class="info__header"> DIMPA 딤파</span>
@@ -193,7 +249,10 @@
               </div>
             </a>
             <a href="javscript:void(0)" class="swiper-slide item">
-              <img src="./assets/fur_1.jpg" alt="" />
+              <div class="img-wrapper">
+                <img src="./assets/fur_1.jpg" alt="" class="pic-first" />
+                <img src="./assets/fur_2.jpg" alt="" class="pic-second" />
+              </div>
               <div class="info-wrapper">
                 <h3 class="text-bold">
                   <span class="info__header"> DIMPA 딤파</span>
@@ -220,9 +279,6 @@
           <div class="swiper-scrollbar"></div>
         </div>
       </section>
-      <!-- 우리집 겅루에 어울리는 조양 -->
-
-      <!-- 싱그러운 창가 -->
     </main>
     <footer class="footer">
       <div class="footer__container">

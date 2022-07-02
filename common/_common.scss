@@ -29,11 +29,19 @@ body {
 
 h1 {
   font-size: 2.5rem;
+
+  @media screen and (max-width: 600px) {
+    font-size: 1.5rem;
+  }
 }
 
 h2 {
   font-size: 1.5rem;
   line-height: 1.45;
+
+  @media screen and (max-width: 600px) {
+    font-size: 1.125rem;
+  }
 }
 
 h3 {
@@ -50,48 +58,123 @@ main {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 2rem;
+
+  @media screen and (max-width: 600px) {
+    padding: 0 1rem;
+  }
 }
 
 .text-bold {
   font-weight: bold;
 }
 
-.round {
-  position: absolute;
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: white;
+  overflow-x: hidden;
+  transition: 0.5s;
 
+  .overlay-content {
+    position: relative;
+    top: 10%;
+    width: 100%;
+    text-align: start;
+    margin-top: 30px;
+    padding: 2rem;
+
+    a {
+      padding: 1rem 0;
+      font-size: 2rem;
+      font-weight: 700;
+
+      &:hover,
+      &:focus {
+        color: black;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  #offcanvas-nav__logo {
+    display: block;
+    width: 90px;
+    height: 40px;
+
+    position: absolute;
+    top: 20px;
+    left: 2rem;
+  }
+
+  #menu-icon--close {
+    position: absolute;
+    top: 20px;
+    right: 2rem;
+    font-size: 24px;
+    color: black;
+  }
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px;
+  }
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+.round-position {
+  position: absolute;
   width: 2rem;
   height: 2rem;
-  border-radius: 20px;
-  background-color: rgba(0, 0, 0, 0.3);
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
   cursor: pointer;
 
-  .inner-round {
-    width: 0.7rem;
-    height: 0.7rem;
+  .round {
+    width: 100%;
+    height: 100%;
+
     border-radius: 20px;
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .inner-round {
+      width: 0.8rem;
+      height: 0.8rem;
+      border-radius: 20px;
+      background-color: white;
+    }
   }
 
-  .inner-round__wrapper {
+  .popup__wrapper {
     position: relative;
     visibility: hidden;
+    background-color: red;
 
     .popup {
+      width: 120px;
+      padding: 0.5rem;
+
       position: absolute;
+
       background-color: white;
       box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 
-      width: 120px;
-      top: 0.5rem;
-      padding: 0.5rem;
-
       z-index: 99;
+
+      opacity: 0;
+      transition: opacity 500ms;
 
       h3 {
         font-size: 0.875rem;
@@ -110,7 +193,6 @@ main {
 
         &::before {
           content: "₩";
-          margin-right: 0.2rem;
         }
       }
     }
@@ -120,13 +202,17 @@ main {
   }
 
   &:hover {
-    .inner-round {
+    .round {
       transform: scale(0.8);
-      transition: 0.6s;
+      transition: 0.3s;
+      background-color: rgba(0, 0, 0, 0.5);
     }
 
-    .inner-round__wrapper {
+    .popup__wrapper {
       visibility: visible;
+      .popup {
+        opacity: 1;
+      }
     }
   }
 }
