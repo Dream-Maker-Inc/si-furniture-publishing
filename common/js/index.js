@@ -1,3 +1,27 @@
+// direction에 따라 popup 위치 설정
+const getPositionByDirection = (direction, element) => {
+  switch (direction) {
+    case "top":
+      element.style.top = "-6rem";
+      element.style.right = "-3rem";
+      break;
+    case "bottom":
+      element.style.top = "2rem";
+      element.style.right = "-3.2rem";
+      break;
+    case "right":
+      element.style.top = "-2rem";
+      element.style.right = "-7.6rem";
+      break;
+    case "left":
+      element.style.top = "-2.5rem";
+      element.style.right = "2rem";
+      break;
+    default:
+      element.style.top = "0.5rem";
+  }
+};
+
 //JSON 객체 생성
 let json = JSON.parse(JSON.stringify(productInformation));
 let fragment = document.createDocumentFragment();
@@ -8,19 +32,22 @@ json.forEach((item) => {
 
   item.data.forEach((it) => {
     // 노드 생성
-    let round = document.createElement("div");
-    let innerRoundWrapper = document.createElement("div");
+    let roundPosition = document.createElement("div");
     let innerRound = document.createElement("div");
+    let round = document.createElement("div");
+    let popupWrapper = document.createElement("div");
 
     let a = document.createElement("a");
     let title = document.createElement("h3");
     let desc = document.createElement("h4");
     let price = document.createElement("p");
 
+    // 텍스트 노드 생성
     const titleText = document.createTextNode(it.title);
     const descText = document.createTextNode(it.description);
     const priceText = document.createTextNode(it.price);
 
+    // 텍스트 매칭
     title.appendChild(titleText);
     desc.appendChild(descText);
     price.appendChild(priceText);
@@ -30,20 +57,23 @@ json.forEach((item) => {
     a.append(price);
     a.href = it.link;
 
+    roundPosition.className = "round-position";
     round.className = "round";
-    innerRoundWrapper.className = "inner-round__wrapper";
     innerRound.className = "inner-round";
+    popupWrapper.className = "popup__wrapper";
     a.className = "popup";
 
-    innerRoundWrapper.append(a);
+    popupWrapper.append(a);
     round.append(innerRound);
-    round.append(innerRoundWrapper);
+    roundPosition.append(popupWrapper);
+    roundPosition.append(round);
 
-    round.style.top = it.axisY;
-    round.style.left = it.axisX;
+    roundPosition.style.top = it.axisY;
+    roundPosition.style.left = it.axisX;
 
-    // li 노드 추가
-    fragment.append(round);
+    getPositionByDirection(it.direction, a);
+
+    fragment.append(roundPosition);
   });
 
   parent.append(fragment);
