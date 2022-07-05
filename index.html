@@ -14,11 +14,6 @@
       type="text/css"
       href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.css"
     />
-    <!-- UIkit CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/uikit@3.14.3/dist/css/uikit.min.css"
-    />
 
     <script
       type="text/javascript"
@@ -29,9 +24,6 @@
     <script defer src="./common/js/offcanvas-nav.js"></script>
     <script defer src="./common/js/swiper.js"></script>
 
-    <!-- UIkit JS -->
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.3/dist/js/uikit.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.14.3/dist/js/uikit-icons.min.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -39,7 +31,9 @@
     <header class="header">
       <div class="header__container">
         <div class="header__main__wrapper">
-          <img src="./assets/ikea-logo.jpeg" alt="site-logo" />
+          <a href="javascript:void(0)">
+            <img src="./assets/ikea-logo.jpeg" alt="site-logo" />
+          </a>
           <input
             type="search"
             class="input--search-pc input--search"
@@ -49,12 +43,6 @@
             <a class="header__icon"><i class="bi bi-person"></i> </a>
             <a class="header__icon"><i class="bi bi-heart"></i></a>
             <a class="header__icon"><i class="bi bi-cart"></i></a>
-            <a
-              href="#offcanvas-usage"
-              uk-toggle
-              class="header__icon-menu header__icon"
-              ><i class="bi bi-list"></i
-            ></a>
           </div>
         </div>
         <input
@@ -87,26 +75,6 @@
           </li>
         </ol>
       </nav>
-      <!-- offcanvas nav -->
-      <div id="offcanvas-nav" class="overlay">
-        <a href="javascript:void(0)" id="menu-icon--close"
-          ><i class="bi bi-x-lg"></i
-        ></a>
-        <a
-          ><img id="offcanvas-nav__logo" src="./assets/ikea-logo.jpeg" alt=""
-        /></a>
-        <div class="overlay-content">
-          <a class="overlay-content__item" href="javascript:void(0)"
-            >모든 제품</a
-          >
-          <a class="overlay-content__item" href="javascript:void(0)"
-            >온라인 쇼룸</a
-          >
-          <a class="overlay-content__item" href="javascript:void(0)"
-            >더 낮은 새로운 가격</a
-          >
-        </div>
-      </div>
 
       <!-- main title -->
       <section class="main-title">
@@ -303,8 +271,13 @@
           <div class="content--nav">
             <ul class="content--nav__wrapper">
               <li class="nav">
-                <h3><span class="text-bold">고객문의</span></h3>
-                <ul>
+                <h3 class="acc">
+                  <span class="acc__header--span text-bold">고객문의</span>
+                  <button class="acc__header--btn text-bold">고객문의</button>
+                  <i class="i-up bi bi-chevron-up"></i>
+                  <i class="i-down bi bi-chevron-down"></i>
+                </h3>
+                <ul class="acc__content">
                   <li><a>고객지원</a></li>
                   <li><a>자주 묻는 질문</a></li>
                   <li><a>셀프 플래닝</a></li>
@@ -313,8 +286,13 @@
                 </ul>
               </li>
               <li class="nav">
-                <h3><span class="text-bold">고객문의</span></h3>
-                <ul>
+                <h3 class="acc">
+                  <span class="acc__header--span text-bold">고객문의</span>
+                  <button class="acc__header--btn text-bold">고객문의</button>
+                  <i class="i-up bi bi-chevron-up"></i>
+                  <i class="i-down bi bi-chevron-down"></i>
+                </h3>
+                <ul class="acc__content">
                   <li><a>고객지원</a></li>
                   <li><a>자주 묻는 질문</a></li>
                   <li><a>셀프 플래닝</a></li>
@@ -323,8 +301,13 @@
                 </ul>
               </li>
               <li class="nav">
-                <h3><span class="text-bold">고객문의</span></h3>
-                <ul>
+                <h3 class="acc">
+                  <span class="acc__header--span text-bold">고객문의</span>
+                  <button class="acc__header--btn text-bold">고객문의</button>
+                  <i class="i-up bi bi-chevron-up"></i>
+                  <i class="i-down bi bi-chevron-down"></i>
+                </h3>
+                <ul class="acc__content">
                   <li><a>고객지원</a></li>
                   <li><a>자주 묻는 질문</a></li>
                   <li><a>셀프 플래닝</a></li>
@@ -333,8 +316,13 @@
                 </ul>
               </li>
               <li class="nav">
-                <h3><span class="text-bold">고객문의</span></h3>
-                <ul>
+                <h3 class="acc">
+                  <span class="acc__header--span text-bold">고객문의</span>
+                  <button class="acc__header--btn text-bold">고객문의</button>
+                  <i class="i-up bi bi-chevron-up"></i>
+                  <i class="i-down bi bi-chevron-down"></i>
+                </h3>
+                <ul class="acc__content">
                   <li><a>고객지원</a></li>
                   <li><a>자주 묻는 질문</a></li>
                   <li><a>셀프 플래닝</a></li>

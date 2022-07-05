@@ -69,68 +69,6 @@ main {
   font-weight: bold;
 }
 
-.overlay {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: white;
-  overflow-x: hidden;
-  transition: 0.5s;
-
-  .overlay-content {
-    position: relative;
-    top: 10%;
-    width: 100%;
-    text-align: start;
-    margin-top: 30px;
-    padding: 2rem;
-
-    a {
-      padding: 1rem 0;
-      font-size: 2rem;
-      font-weight: 700;
-
-      &:hover,
-      &:focus {
-        color: black;
-        text-decoration: underline;
-      }
-    }
-  }
-
-  #offcanvas-nav__logo {
-    display: block;
-    width: 90px;
-    height: 40px;
-
-    position: absolute;
-    top: 20px;
-    left: 2rem;
-  }
-
-  #menu-icon--close {
-    position: absolute;
-    top: 20px;
-    right: 2rem;
-    font-size: 24px;
-    color: black;
-  }
-}
-
-@media screen and (max-height: 450px) {
-  .overlay a {
-    font-size: 20px;
-  }
-  .overlay .closebtn {
-    font-size: 40px;
-    top: 15px;
-    right: 35px;
-  }
-}
-
 .round-position {
   position: absolute;
   width: 2rem;
