@@ -53,6 +53,12 @@ h3 {
   line-height: 1.5;
 }
 
+@media screen and (max-width: 600px) {
+  h3 {
+    font-size: 0.75rem;
+  }
+}
+
 p {
   font-size: 0.875rem;
   line-height: 1.571;
@@ -854,7 +860,7 @@ main {
 
 @media screen and (max-width: 600px) {
   .footer .footer__container {
-    padding: 4rem 1rem;
+    padding: 2rem 1rem;
   }
   .footer .content__wrapper {
     -webkit-box-orient: vertical;
@@ -866,11 +872,12 @@ main {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
     padding-right: unset;
+    margin-bottom: 2rem;
   }
   .footer .content__wrapper .content--nav {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
   }
   .footer .content__wrapper .content--nav__wrapper {
     width: 100%;
@@ -892,7 +899,7 @@ main {
   .footer .content__wrapper .content--nav__wrapper .nav h3 {
     margin-top: 0.75rem;
     margin-bottom: 0.75rem;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -906,6 +913,7 @@ main {
   }
   .footer .content__wrapper .content--nav__wrapper .nav h3 .acc__header--btn {
     display: block;
+    font-size: 0.875rem;
   }
   .footer .content__wrapper .content--nav__wrapper .nav h3 .i-down {
     display: block;
@@ -929,6 +937,31 @@ main {
   .footer .content__wrapper .content--nav__wrapper .nav .active {
     height: 230px;
     visibility: visible;
+  }
+  .footer .sns__wrapper {
+    padding-bottom: 2rem;
+  }
+  .footer .sns__wrapper .icon-list i {
+    font-size: 1rem;
+  }
+  .footer .sns__wrapper .language-select .language-select__wrapper .language-select__link {
+    padding: 8px 12px;
+  }
+  .footer .sns__wrapper .language-select .language-select__wrapper .language-select__link i {
+    font-size: 1rem;
+  }
+  .footer .sns__wrapper .language-select .language-select__wrapper .language-select__link p {
+    font-size: 12px;
+    line-height: 1;
+  }
+  .footer .privacy-info__wrapper p {
+    font-size: 12px;
+  }
+  .footer .privacy-info__wrapper a {
+    font-size: 12px;
+  }
+  .footer .privacy-detail__wrapper p {
+    font-size: 12px;
   }
 }
 /*# sourceMappingURL=index.css.map */
