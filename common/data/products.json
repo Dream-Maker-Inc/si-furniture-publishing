@@ -5,15 +5,19 @@ productInformation = [
       {
         "axisX": "20%",
         "axisY": "10%",
-        "title": "DIMPA 딤파",
-        "description": "통+뚜껑",
+        "title": "DIMPARAPA 딤파라파 모델",
+        "description": "통+뚜껑 콤비네이션 및 컬러 아이보리 브라운",
         "link": "https://www.google.com",
-        "price": "10000",
+        "price": "10,000",
         "discountPrice": "0000",
         "discountPeriod": "2022-06-28",
         "discountPercent": "10",
         "direction": "right",
-        "popup": true
+        "popup": true,
+        "hidden" : true,
+        "firstPictureSrc" : "./assets/fur_1.jpg",
+        "secondPictureSrc" : "./assets/fur_2.jpg",
+
       },
       {
         "axisX": "30%",
@@ -21,12 +25,16 @@ productInformation = [
         "title": "DIMPA 딤파",
         "description": "통+뚜껑",
         "link": "https://www.google.com",
-        "price": "10000",
+        "price": "10,000",
         "discountPrice": "0000",
         "discountPeriod": "2022-06-28",
         "discountPercent": "10",
         "direction": "right",
-        "popup": true
+        "popup": false,
+        "hidden" : false,
+        "firstPictureSrc" : "./assets/fur_1.jpg",
+        "secondPictureSrc" : "./assets/fur_2.jpg",
+
       },
       {
         "axisX": "50%",
@@ -34,12 +42,16 @@ productInformation = [
         "title": "DIMPA 딤파",
         "description": "통+뚜껑",
         "link": "https://www.google.com",
-        "price": "10000",
+        "price": "10,000",
         "discountPrice": "0000",
         "discountPerio": "2022-06-28",
         "discountPercent": "10",
         "direction": "bottom",
-        "popup": true
+        "popup": true,
+        "hidden" : false,
+        "firstPictureSrc" : "./assets/fur_1.jpg",
+        "secondPictureSrc" : "./assets/fur_2.jpg",
+
       }
     ]
   },
@@ -52,12 +64,16 @@ productInformation = [
         "title": "DIMPA 딤파",
         "description": "통+뚜껑",
         "link": "https://www.google.com",
-        "price": "10000",
-        "discountPrice": "0000",
+        "price": "10,000",
+        "discountPrice": "3000",
         "discountPeriod": "2022-06-28",
         "discountPercent": "10",
         "direction": "right",
-        "popup": true
+        "popup": false,
+        "hidden" : true,
+        "firstPictureSrc" : "./assets/fur_1.jpg",
+        "secondPictureSrc" : "./assets/fur_2.jpg",
+
       },
       {
         "axisX": "70%",
@@ -65,12 +81,16 @@ productInformation = [
         "title": "DIMPA 딤파",
         "description": "통+뚜껑",
         "link": "https://www.google.com",
-        "price": "10000",
-        "discountPrice": "0000",
+        "price": "10,000",
+        "discountPrice": "2000",
         "discountPeriod": "2022-06-28",
         "discountPercent": "10",
         "direction": "left",
-        "popup": true
+        "popup": true,
+        "hidden" : false,
+        "firstPictureSrc" : "./assets/fur_1.jpg",
+        "secondPictureSrc" : "./assets/fur_2.jpg",
+
       },
       {
         "axisX": "20%",
@@ -78,12 +98,15 @@ productInformation = [
         "title": "DIMPA 딤파",
         "description": "통+뚜껑",
         "link": "https://www.google.com",
-        "price": "10000",
-        "discountPrice": "0000",
+        "price": "10,000",
+        "discountPrice": "5000",
         "discountPeriod": "2022-06-28",
         "discountPercent": "10",
         "direction": "top",
-        "popup": true
+        "popup": true,
+        "hidden" : false,
+        "firstPictureSrc" : "./assets/fur_1.jpg",
+        "secondPictureSrc" : "./assets/fur_2.jpg",
       }
     ]
   }

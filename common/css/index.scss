@@ -254,18 +254,31 @@
         }
 
         .info-wrapper {
+          width: 95%;
+
           margin-top: 1rem;
           margin-bottom: 0.5rem;
 
-          .info__header {
-            display: block;
-            text-transform: uppercase;
+          h3 {
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            .info__header {
+              width: 100%;
+
+              display: block;
+              text-transform: uppercase;
+            }
+            .info__desc {
+              width: 100%;
+
+              font-weight: 400;
+              letter-spacing: 0;
+              font-size: 0.875rem;
+            }
           }
-          .info__desc {
-            font-weight: 400;
-            letter-spacing: 0;
-            font-size: 0.875rem;
-          }
+
           .info__price {
             margin-bottom: 0.5rem;
             p {
