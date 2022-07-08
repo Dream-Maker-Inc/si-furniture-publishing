@@ -2,7 +2,7 @@
 const getPositionByDirection = (direction, element) => {
   switch (direction) {
     case "top":
-      element.style.top = "-6rem";
+      element.style.top = "-9.5rem";
       element.style.right = "-3rem";
       break;
     case "bottom":
@@ -123,14 +123,12 @@ const makeSlide = (item) => {
 
 // json data 불러오기
 const setJsonData = () => {
-  //JSON 객체 생성
   let json = JSON.parse(JSON.stringify(productInformation));
   let fragment = document.createDocumentFragment();
   let fragment2 = document.createDocumentFragment();
 
   let parentItem = document.getElementById("swiper-wrapper");
 
-  // 노드 추가 순환
   json.forEach((item) => {
     let parent = document.getElementById(item.imageID);
 
@@ -148,29 +146,38 @@ const setJsonData = () => {
       let desc = document.createElement("h4");
       let price = document.createElement("p");
       let discountPrice = document.createElement("p");
+      let discountPercent = document.createElement("span");
 
       // 텍스트 노드 생성
       const titleText = document.createTextNode(it.title);
       const descText = document.createTextNode(it.description);
       const priceText = document.createTextNode(it.price);
       const discountPriceText = document.createTextNode(it.discountPrice);
+      const discountPercentText = document.createTextNode(it.discountPercent);
+
+      // 노드에 class명 설정
+      price.className = "price";
+      discountPrice.className = "discount-price";
+      discountPercent.className = "discount-percent";
+      round.className = "round";
+      innerRound.className = "inner-round";
+      a.className = "popup";
 
       // 텍스트 매칭
       title.appendChild(titleText);
       desc.appendChild(descText);
       price.appendChild(priceText);
       discountPrice.appendChild(discountPriceText);
+      discountPercent.appendChild(discountPercentText);
 
       a.append(title);
       a.append(desc);
       a.append(price);
+      discountPrice.append(discountPercent);
+      a.append(discountPrice);
 
       setPopupByLink(a, it.popup, it.link);
       setAriaHidden(popupWrapper, roundPosition, it.hidden);
-
-      round.className = "round";
-      innerRound.className = "inner-round";
-      a.className = "popup";
 
       popupWrapper.append(a);
       round.append(innerRound);

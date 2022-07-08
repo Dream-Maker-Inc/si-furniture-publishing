@@ -143,13 +143,36 @@ main {
   line-height: 1.3;
 }
 
-.round-position .popup__wrapper .popup p {
+.round-position .popup__wrapper .popup .price {
   margin-top: 1rem;
   font-weight: 700;
+  text-decoration: line-through;
 }
 
-.round-position .popup__wrapper .popup p::before {
-  content: "₩";
+.round-position .popup__wrapper .popup .price::before {
+  content: "₩ ";
+}
+
+.round-position .popup__wrapper .popup .discount-price {
+  font-weight: 700;
+  line-height: 1;
+}
+
+.round-position .popup__wrapper .popup .discount-price::before {
+  content: "₩ ";
+}
+
+.round-position .popup__wrapper .popup .discount-percent {
+  font-weight: 400;
+  margin-left: 0.2rem;
+}
+
+.round-position .popup__wrapper .popup .discount-percent::before {
+  content: "(";
+}
+
+.round-position .popup__wrapper .popup .discount-percent::after {
+  content: "%)";
 }
 
 .round-position .popup__wrapper:hover {
