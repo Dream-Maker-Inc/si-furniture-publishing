@@ -105,7 +105,7 @@ main {
     background-color: red;
 
     .popup {
-      width: 120px;
+      width: 160px;
       padding: 0.5rem;
 
       position: absolute;
@@ -133,10 +133,19 @@ main {
       .price {
         margin-top: 1rem;
         font-weight: 700;
-        text-decoration: line-through;
 
         &::before {
           content: "₩ ";
+        }
+
+        &--discount {
+          margin-top: 1rem;
+          font-weight: 700;
+          text-decoration: line-through;
+
+          &::before {
+            content: "₩ ";
+          }
         }
       }
 

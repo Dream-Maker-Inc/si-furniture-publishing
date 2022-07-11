@@ -118,7 +118,7 @@ main {
 }
 
 .round-position .popup__wrapper .popup {
-  width: 120px;
+  width: 160px;
   padding: 0.5rem;
   position: absolute;
   background-color: white;
@@ -146,10 +146,19 @@ main {
 .round-position .popup__wrapper .popup .price {
   margin-top: 1rem;
   font-weight: 700;
-  text-decoration: line-through;
 }
 
 .round-position .popup__wrapper .popup .price::before {
+  content: "₩ ";
+}
+
+.round-position .popup__wrapper .popup .price--discount {
+  margin-top: 1rem;
+  font-weight: 700;
+  text-decoration: line-through;
+}
+
+.round-position .popup__wrapper .popup .price--discount::before {
   content: "₩ ";
 }
 
@@ -552,11 +561,46 @@ div[data-hidden="false"] .popup {
 
 .section .swiper-container .swiper-wrapper .item .info-wrapper .info__price p {
   font-size: 1.4rem;
+  display: inline;
 }
 
 .section .swiper-container .swiper-wrapper .item .info-wrapper .info__price span {
   font-size: 0.7rem;
   font-weight: 400;
+}
+
+.section .swiper-container .swiper-wrapper .item .info-wrapper .info__price .price::before {
+  content: "₩ ";
+}
+
+.section .swiper-container .swiper-wrapper .item .info-wrapper .info__price .price--discount {
+  text-decoration: line-through;
+}
+
+.section .swiper-container .swiper-wrapper .item .info-wrapper .info__price .price--discount::before {
+  content: "₩ ";
+}
+
+.section .swiper-container .swiper-wrapper .item .info-wrapper .info__price .discount-price {
+  margin-left: 0.5rem;
+}
+
+.section .swiper-container .swiper-wrapper .item .info-wrapper .info__price .discount-price::before {
+  content: "₩ ";
+}
+
+.section .swiper-container .swiper-wrapper .item .info-wrapper .info__price .discount-percent {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-left: 0.2rem;
+}
+
+.section .swiper-container .swiper-wrapper .item .info-wrapper .info__price .discount-percent::before {
+  content: "(";
+}
+
+.section .swiper-container .swiper-wrapper .item .info-wrapper .info__price .discount-percent::after {
+  content: "%)";
 }
 
 .section .swiper-container .swiper-wrapper .item .info-wrapper .cart-wrapper {

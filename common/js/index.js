@@ -2,20 +2,20 @@
 const getPositionByDirection = (direction, element) => {
   switch (direction) {
     case "top":
-      element.style.top = "-9.5rem";
-      element.style.right = "-3rem";
+      element.style.top = "-7.2rem";
+      element.style.right = "-4.3rem";
       break;
     case "bottom":
       element.style.top = "2rem";
-      element.style.right = "-3.2rem";
+      element.style.right = "-4.2rem";
       break;
     case "right":
-      element.style.top = "-2rem";
-      element.style.right = "-7.6rem";
+      element.style.top = "-3rem";
+      element.style.right = "-10.3rem";
       break;
     case "left":
-      element.style.top = "-2.5rem";
-      element.style.right = "2rem";
+      element.style.top = "-3.3rem";
+      element.style.right = "2.3rem";
       break;
     default:
       element.style.top = "0.5rem";
@@ -73,6 +73,7 @@ const makeSlide = (item) => {
   infoTextWrapper.className = "text-bold";
   infoHeader.className = "info__header";
   infoDesc.className = "info__desc";
+  infoPirce.className = "price";
   infoPirceWrapper.className = "info__price text-bold";
 
   cartWrapper.className = "cart-wrapper";
@@ -80,6 +81,13 @@ const makeSlide = (item) => {
   cartIcon.className = "cart bi bi-basket2-fill";
   heartBtn.className = "btn-heart";
   heartIcon.className = "heart bi bi-heart";
+
+  const discountPriceInfo = getDiscountPrice(
+    item.discountPeriod,
+    item.discountPrice,
+    item.discountPercent,
+    infoPirce
+  );
 
   // json data append
   picFirst.src = item.firstPictureSrc;
@@ -99,6 +107,7 @@ const makeSlide = (item) => {
   infoTextWrapper.append(infoDesc);
 
   infoPirceWrapper.append(infoPirce);
+  infoPirceWrapper.append(discountPriceInfo);
 
   cartBtn.append(cartIcon);
   heartBtn.append(heartIcon);
@@ -119,6 +128,47 @@ const makeSlide = (item) => {
   // const infoDescText = document.createTextNode(it.description);
   // const priceText = document.createTextNode(it.price);
   // const discountPriceText = document.createTextNode(it.discountPrice);
+};
+
+// 할인기간 내 할인가 표시
+const getDiscountPrice = (
+  discountDate,
+  discountPrice,
+  discountPercent,
+  priceNode
+) => {
+  const time = new Date();
+
+  const year = time.getFullYear();
+  const month = time.getMonth() + 1;
+  const day = time.getDate();
+
+  const formattedCurrDate = `${year}-${month}-${day}`;
+
+  const currDate = new Date(formattedCurrDate);
+  const discountEndDate = new Date(discountDate);
+
+  let discountPriceNode = document.createElement("p");
+  let discountPercentNode = document.createElement("span");
+
+  discountPriceNode.className = "";
+  discountPercentNode.className = "";
+
+  if (discountEndDate >= currDate) {
+    discountPriceNode.className = "discount-price";
+    discountPercentNode.className = "discount-percent";
+
+    const discountPriceText = document.createTextNode(discountPrice);
+    const discountPercentText = document.createTextNode(discountPercent);
+
+    discountPriceNode.appendChild(discountPriceText);
+    discountPercentNode.appendChild(discountPercentText);
+
+    priceNode.className = "price--discount";
+  }
+  discountPriceNode.append(discountPercentNode);
+
+  return discountPriceNode;
 };
 
 // json data 불러오기
@@ -145,36 +195,35 @@ const setJsonData = () => {
       let title = document.createElement("h3");
       let desc = document.createElement("h4");
       let price = document.createElement("p");
-      let discountPrice = document.createElement("p");
-      let discountPercent = document.createElement("span");
 
       // 텍스트 노드 생성
       const titleText = document.createTextNode(it.title);
       const descText = document.createTextNode(it.description);
       const priceText = document.createTextNode(it.price);
-      const discountPriceText = document.createTextNode(it.discountPrice);
-      const discountPercentText = document.createTextNode(it.discountPercent);
 
       // 노드에 class명 설정
       price.className = "price";
-      discountPrice.className = "discount-price";
-      discountPercent.className = "discount-percent";
       round.className = "round";
       innerRound.className = "inner-round";
       a.className = "popup";
+
+      const discountPriceInfo = getDiscountPrice(
+        it.discountPeriod,
+        it.discountPrice,
+        it.discountPercent,
+        price
+      );
 
       // 텍스트 매칭
       title.appendChild(titleText);
       desc.appendChild(descText);
       price.appendChild(priceText);
-      discountPrice.appendChild(discountPriceText);
-      discountPercent.appendChild(discountPercentText);
 
       a.append(title);
       a.append(desc);
       a.append(price);
-      discountPrice.append(discountPercent);
-      a.append(discountPrice);
+
+      a.append(discountPriceInfo);
 
       setPopupByLink(a, it.popup, it.link);
       setAriaHidden(popupWrapper, roundPosition, it.hidden);
@@ -197,7 +246,6 @@ const setJsonData = () => {
 
     parent.append(fragment);
     parentItem.append(fragment2);
-    //parentItem.append(childItem);
   });
 };
 
@@ -223,15 +271,6 @@ const setJsonData = () => {
     });
   });
 })();
-
-// footer accordion
-const acc = document.getElementsByClassName("acc");
-for (let i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function () {
-    this.nextElementSibling.classList.toggle("active");
-    this.classList.toggle("acc_icon--active");
-  });
-}
 
 // swiper slide DOM 생성 함수
 const createSwiperSlide = ({ name }) => {
