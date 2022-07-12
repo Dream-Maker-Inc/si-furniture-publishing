@@ -1,6 +1,8 @@
 productInformation = [
+
+  {"id" : "1",
+    "dataList" : [ 
   {
-    "imageID": "photo-1",
     "data": [
       {
         "axisX": "20%",
@@ -10,7 +12,7 @@ productInformation = [
         "link": "https://www.google.com",
         "price": "10,000",
         "discountPrice": "9,000",
-        "discountPeriod": "2022-07-12",
+        "discountPeriod": "2022-07-13",
         "discountPercent": "10",
         "direction": "right",
         "popup": true,
@@ -44,7 +46,7 @@ productInformation = [
         "link": "https://www.google.com",
         "price": "9,900",
         "discountPrice": "8,000",
-        "discountPeriod": "2022-06-28",
+        "discountPeriod":  "2022-07-14",
         "discountPercent": "10",
         "direction": "bottom",
         "popup": true,
@@ -56,7 +58,6 @@ productInformation = [
     ]
   },
   {
-    "imageID": "photo-2",
     "data": [
       {
         "axisX": "10%",
@@ -109,5 +110,66 @@ productInformation = [
         "secondPictureSrc" : "./assets/fur_2.jpg",
       }
     ]
-  }
+  },
+  ]
+},
+  {"id" : "2", 
+    "dataList" : [
+      {
+        "data": [
+          {
+            "axisX": "20%",
+            "axisY": "10%",
+            "title": "DIMPARAPA 딤파라파 모델",
+            "description": "통+뚜껑 콤비네이션 및 컬러 아이보리 브라운",
+            "link": "https://www.google.com",
+            "price": "10,000",
+            "discountPrice": "9,000",
+            "discountPeriod": "2022-07-13",
+            "discountPercent": "10",
+            "direction": "right",
+            "popup": true,
+            "hidden" : true,
+            "firstPictureSrc" : "./assets/fur_1.jpg",
+            "secondPictureSrc" : "./assets/fur_2.jpg",
+    
+          },
+          {
+            "axisX": "30%",
+            "axisY": "20%",
+            "title": "DIMPA 딤파",
+            "description": "통+뚜껑",
+            "link": "https://www.google.com",
+            "price": "20,000",
+            "discountPrice": "13,000",
+            "discountPeriod": "2022-06-28",
+            "discountPercent": "10",
+            "direction": "right",
+            "popup": false,
+            "hidden" : false,
+            "firstPictureSrc" : "./assets/fur_1.jpg",
+            "secondPictureSrc" : "./assets/fur_2.jpg",
+    
+          },
+          {
+            "axisX": "50%",
+            "axisY": "50%",
+            "title": "NISSEDAL 니세달",
+            "description": "거울, 화이트, 65x65 cm",
+            "link": "https://www.google.com",
+            "price": "9,900",
+            "discountPrice": "8,000",
+            "discountPeriod":  "2022-07-14",
+            "discountPercent": "10",
+            "direction": "bottom",
+            "popup": true,
+            "hidden" : false,
+            "firstPictureSrc" : "./assets/fur_1.jpg",
+            "secondPictureSrc" : "./assets/fur_2.jpg",
+    
+          }
+        ]
+      },
+  
+    ]}
 ]

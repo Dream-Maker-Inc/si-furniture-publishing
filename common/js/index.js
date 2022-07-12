@@ -2,7 +2,7 @@
 const getPositionByDirection = (direction, element) => {
   switch (direction) {
     case "top":
-      element.style.top = "-7.2rem";
+      element.style.top = "-6rem";
       element.style.right = "-4.3rem";
       break;
     case "bottom":
@@ -11,11 +11,11 @@ const getPositionByDirection = (direction, element) => {
       break;
     case "right":
       element.style.top = "-3rem";
-      element.style.right = "-10.3rem";
+      element.style.right = "-10rem";
       break;
     case "left":
       element.style.top = "-3.3rem";
-      element.style.right = "2.3rem";
+      element.style.right = "2rem";
       break;
     default:
       element.style.top = "0.5rem";
@@ -44,6 +44,7 @@ const setAriaHidden = (element, roundPositionElement, hiddenState) => {
   }
 };
 
+// 슬라이더 아이템
 const makeSlide = (item) => {
   // 노드 생성
   let slideCard = document.createElement("a");
@@ -122,12 +123,6 @@ const makeSlide = (item) => {
   slideCard.append(infoWrapper);
 
   return slideCard;
-
-  // 텍스트 노드 생성
-  // const infoHeaderText = document.createTextNode(it.title);
-  // const infoDescText = document.createTextNode(it.description);
-  // const priceText = document.createTextNode(it.price);
-  // const discountPriceText = document.createTextNode(it.discountPrice);
 };
 
 // 할인기간 내 할인가 표시
@@ -177,75 +172,85 @@ const setJsonData = () => {
   let fragment = document.createDocumentFragment();
   let fragment2 = document.createDocumentFragment();
 
-  let parentItem = document.getElementById("swiper-wrapper");
+  let sections = document.getElementsByClassName("section");
+
+  let sectionIndex = 0;
 
   json.forEach((item) => {
-    let parent = document.getElementById(item.imageID);
+    const section = sections[sectionIndex];
+    const sliderWrapper = section.querySelector(".swiper-wrapper");
+    const photos = section.getElementsByClassName("photo");
 
-    item.data.forEach((it) => {
-      const slideCard = makeSlide(it);
+    let photoIndex = 0;
 
-      // 노드 생성
-      let roundPosition = document.createElement("div");
-      let innerRound = document.createElement("div");
-      let round = document.createElement("div");
-      let popupWrapper = document.createElement("div");
+    item.dataList.forEach((item) => {
+      let photo = photos[photoIndex];
 
-      let a = document.createElement("a");
-      let title = document.createElement("h3");
-      let desc = document.createElement("h4");
-      let price = document.createElement("p");
+      item.data.forEach((it) => {
+        const slideCard = makeSlide(it);
 
-      // 텍스트 노드 생성
-      const titleText = document.createTextNode(it.title);
-      const descText = document.createTextNode(it.description);
-      const priceText = document.createTextNode(it.price);
+        // 노드 생성
+        let roundPosition = document.createElement("div");
+        let innerRound = document.createElement("div");
+        let round = document.createElement("div");
+        let popupWrapper = document.createElement("div");
 
-      // 노드에 class명 설정
-      price.className = "price";
-      round.className = "round";
-      innerRound.className = "inner-round";
-      a.className = "popup";
+        let a = document.createElement("a");
+        let title = document.createElement("h3");
+        let desc = document.createElement("h4");
+        let price = document.createElement("p");
 
-      const discountPriceInfo = getDiscountPrice(
-        it.discountPeriod,
-        it.discountPrice,
-        it.discountPercent,
-        price
-      );
+        // 텍스트 노드 생성
+        const titleText = document.createTextNode(it.title);
+        const descText = document.createTextNode(it.description);
+        const priceText = document.createTextNode(it.price);
 
-      // 텍스트 매칭
-      title.appendChild(titleText);
-      desc.appendChild(descText);
-      price.appendChild(priceText);
+        // 노드에 class명 설정
+        price.className = "price";
+        round.className = "round";
+        innerRound.className = "inner-round";
+        a.className = "popup";
 
-      a.append(title);
-      a.append(desc);
-      a.append(price);
+        const discountPriceInfo = getDiscountPrice(
+          it.discountPeriod,
+          it.discountPrice,
+          it.discountPercent,
+          price
+        );
 
-      a.append(discountPriceInfo);
+        // 텍스트 매칭
+        title.appendChild(titleText);
+        desc.appendChild(descText);
+        price.appendChild(priceText);
 
-      setPopupByLink(a, it.popup, it.link);
-      setAriaHidden(popupWrapper, roundPosition, it.hidden);
+        a.append(title);
+        a.append(desc);
+        a.append(price);
 
-      popupWrapper.append(a);
-      round.append(innerRound);
-      roundPosition.append(popupWrapper);
-      roundPosition.append(round);
+        a.append(discountPriceInfo);
 
-      roundPosition.style.top = it.axisY;
-      roundPosition.style.left = it.axisX;
+        setPopupByLink(a, it.popup, it.link);
+        setAriaHidden(popupWrapper, roundPosition, it.hidden);
 
-      getPositionByDirection(it.direction, a);
+        popupWrapper.append(a);
+        round.append(innerRound);
+        roundPosition.append(popupWrapper);
+        roundPosition.append(round);
 
-      fragment.append(roundPosition);
-      fragment2.append(slideCard);
+        roundPosition.style.top = it.axisY;
+        roundPosition.style.left = it.axisX;
 
-      console.log(slideCard);
+        getPositionByDirection(it.direction, a);
+
+        fragment.append(roundPosition);
+        fragment2.append(slideCard);
+      });
+
+      photo.append(fragment);
+      sliderWrapper.append(fragment2);
+      photoIndex += 1;
     });
-
-    parent.append(fragment);
-    parentItem.append(fragment2);
+    sectionIndex += 1;
   });
 };
 
@@ -256,19 +261,22 @@ const setJsonData = () => {
 
   photoItems.forEach(function (photo) {
     const popupWrapperItem = photo.querySelector(".popup__default");
-    const roundPositionItem = photo.querySelector(".round-position__default");
 
-    photo.addEventListener("mouseout", function (event) {
+    const roundPositionItems = photo.getElementsByClassName("round-position");
+
+    photo.addEventListener("mouseleave", function () {
       popupWrapperItem.dataset.hidden = "true";
     });
 
-    photo.addEventListener("mouseover", function (event) {
-      popupWrapperItem.dataset.hidden = "false";
-    });
+    for (let i = 0; i < roundPositionItems.length; i++) {
+      roundPositionItems[i].addEventListener("mouseover", function () {
+        const current = photo.querySelectorAll('[data-hidden="true"]');
 
-    roundPositionItem.addEventListener("mouseenter", function (event) {
-      popupWrapperItem.dataset.hidden = "true";
-    });
+        current[0].dataset.hidden = "false";
+
+        this.querySelector(".popup").dataset.hidden = "true";
+      });
+    }
   });
 })();
 
