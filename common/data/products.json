@@ -5,6 +5,7 @@ productInformation = [
   {
     "data": [
       {
+        "id" :1,
         "axisX": "20%",
         "axisY": "10%",
         "title": "DIMPARAPA 딤파라파 모델",
@@ -22,6 +23,7 @@ productInformation = [
 
       },
       {
+        "id" : 2,
         "axisX": "30%",
         "axisY": "20%",
         "title": "DIMPA 딤파",
@@ -39,6 +41,7 @@ productInformation = [
 
       },
       {
+        "id" : 3,
         "axisX": "50%",
         "axisY": "50%",
         "title": "NISSEDAL 니세달",
@@ -60,6 +63,7 @@ productInformation = [
   {
     "data": [
       {
+        "id" : 1,
         "axisX": "10%",
         "axisY": "20%",
         "title": "GRADVIS 그라드비스",
@@ -77,6 +81,7 @@ productInformation = [
 
       },
       {
+        "id" : 2,
         "axisX": "70%",
         "axisY": "50%",
         "title": "RINNIG 린니그",
@@ -94,6 +99,7 @@ productInformation = [
 
       },
       {
+        "id" : 3,
         "axisX": "20%",
         "axisY": "90%",
         "title": "KONSTFULL 콘스트풀",
@@ -118,6 +124,7 @@ productInformation = [
       {
         "data": [
           {
+            "id" :1,
             "axisX": "20%",
             "axisY": "10%",
             "title": "DIMPARAPA 딤파라파 모델",
@@ -135,6 +142,7 @@ productInformation = [
     
           },
           {
+            "id" :2,
             "axisX": "30%",
             "axisY": "20%",
             "title": "DIMPA 딤파",
@@ -152,6 +160,7 @@ productInformation = [
     
           },
           {
+            "id" :3,
             "axisX": "50%",
             "axisY": "50%",
             "title": "NISSEDAL 니세달",
