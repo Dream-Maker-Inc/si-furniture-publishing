@@ -254,6 +254,7 @@ const setJsonData = () => {
   });
 };
 
+// photo item hover 설정
 (function () {
   setJsonData();
 
