@@ -61,8 +61,8 @@ const makeSlide = (item) => {
   let infoTextWrapper = document.createElement("h3");
   let infoHeader = document.createElement("span");
   let infoDesc = document.createElement("span");
-  let infoPirceWrapper = document.createElement("div");
-  let infoPirce = document.createElement("p");
+  let infoPriceWrapper = document.createElement("div");
+  let infoPrice = document.createElement("p");
 
   let cartWrapper = document.createElement("div");
   let cartBtn = document.createElement("button");
@@ -79,8 +79,8 @@ const makeSlide = (item) => {
   infoTextWrapper.className = "text-bold";
   infoHeader.className = "info__header";
   infoDesc.className = "info__desc";
-  infoPirce.className = "price";
-  infoPirceWrapper.className = "info__price text-bold";
+  infoPrice.className = "price";
+  infoPriceWrapper.className = "info__price text-bold";
 
   cartWrapper.className = "cart-wrapper";
   cartBtn.className = "btn-cart";
@@ -94,7 +94,7 @@ const makeSlide = (item) => {
     item.discountEndDate,
     item.discountPrice,
     item.discountPercent,
-    infoPirce
+    infoPrice
   );
 
   // json data append
@@ -105,7 +105,7 @@ const makeSlide = (item) => {
   infoHeader.append(item.title);
   infoDesc.append(item.description);
 
-  infoPirce.append(item.price);
+  infoPrice.append(item.price);
 
   // node fetching
   imgWrapper.append(picFirst);
@@ -114,8 +114,8 @@ const makeSlide = (item) => {
   infoTextWrapper.append(infoHeader);
   infoTextWrapper.append(infoDesc);
 
-  infoPirceWrapper.append(infoPirce);
-  infoPirceWrapper.append(discountPriceInfo);
+  infoPriceWrapper.append(infoPrice);
+  infoPriceWrapper.append(discountPriceInfo);
 
   cartBtn.append(cartIcon);
   heartBtn.append(heartIcon);
@@ -123,7 +123,7 @@ const makeSlide = (item) => {
   cartWrapper.append(heartBtn);
 
   infoWrapper.append(infoTextWrapper);
-  infoWrapper.append(infoPirceWrapper);
+  infoWrapper.append(infoPriceWrapper);
   infoWrapper.append(cartWrapper);
 
   slideCard.append(imgWrapper);
