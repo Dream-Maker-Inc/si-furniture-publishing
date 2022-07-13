@@ -188,7 +188,15 @@ main {
   visibility: visible;
 }
 
-.round-position:hover .round {
+div[data-hidden="true"] .popup__wrapper {
+  visibility: visible !important;
+}
+
+div[data-hidden="true"] .popup__wrapper .popup {
+  opacity: 1 !important;
+}
+
+div[data-hidden="true"] .round {
   -webkit-transform: scale(0.8);
           transform: scale(0.8);
   -webkit-transition: 0.3s;
@@ -196,27 +204,11 @@ main {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.round-position:hover .popup__wrapper {
-  visibility: visible;
-}
-
-.round-position:hover .popup__wrapper .popup {
-  opacity: 1;
-}
-
-div[data-hidden="true"] {
-  visibility: visible !important;
-}
-
-div[data-hidden="true"] .popup {
-  opacity: 1 !important;
-}
-
-div[data-hidden="false"] {
+div[data-hidden="false"] .popup__wrapper {
   visibility: hidden;
 }
 
-div[data-hidden="false"] .popup {
+div[data-hidden="false"] .popup__wrapper .popup {
   opacity: 0;
 }
 

@@ -172,33 +172,28 @@ main {
       visibility: visible;
     }
   }
-
-  &:hover {
-    .round {
-      transform: scale(0.8);
-      transition: 0.3s;
-      background-color: rgba(0, 0, 0, 0.5);
-    }
-
-    .popup__wrapper {
-      visibility: visible;
-      .popup {
-        opacity: 1;
-      }
-    }
-  }
 }
 
 div[data-hidden="true"] {
-  visibility: visible !important;
-  .popup {
-    opacity: 1 !important;
+  .popup__wrapper {
+    visibility: visible !important;
+    .popup {
+      opacity: 1 !important;
+    }
+  }
+
+  .round {
+    transform: scale(0.8);
+    transition: 0.3s;
+    background-color: rgba(0, 0, 0, 0.5);
   }
 }
 
 div[data-hidden="false"] {
-  visibility: hidden;
-  .popup {
-    opacity: 0;
+  .popup__wrapper {
+    visibility: hidden;
+    .popup {
+      opacity: 0;
+    }
   }
 }

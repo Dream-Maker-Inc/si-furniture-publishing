@@ -1,4 +1,4 @@
-// direction에 따라 popup 위치 설정
+// direction에 따라 round icon 기준 popup 위치 설정
 const getPositionByDirection = (direction, element) => {
   switch (direction) {
     case "top":
@@ -31,20 +31,24 @@ const setPopupByLink = (element, popupState, address) => {
   }
 };
 
-// aria-hiddeen 설정
-const setAriaHidden = (element, roundPositionElement, hiddenState) => {
-  if (hiddenState == true) {
-    element.dataset.hidden = "true";
-    element.className = "popup__default popup__wrapper";
+// aria-hiddeen 초기 설정 : aria-hidden에 따라 popup이 활성화 및 비활성화됨
+const setAriaHidden = (
+  popupWrapperElement,
+  roundPositionElement,
+  defaultShowState
+) => {
+  if (defaultShowState == true) {
+    popupWrapperElement.className = "popup__default popup__wrapper";
     roundPositionElement.className = "round-position__default round-position";
+    roundPositionElement.dataset.hidden = "true";
   } else {
-    element.dataset.hidden = "false";
-    element.className = "popup__wrapper";
+    popupWrapperElement.className = "popup__wrapper";
     roundPositionElement.className = "round-position";
+    roundPositionElement.dataset.hidden = "false";
   }
 };
 
-// 슬라이더 아이템
+// 슬라이더 아이템 노드 추가
 const makeSlide = (item) => {
   // 노드 생성
   let slideCard = document.createElement("a");
@@ -66,6 +70,7 @@ const makeSlide = (item) => {
   let heartBtn = document.createElement("button");
   let heartIcon = document.createElement("i");
 
+  // 클래스 이름 부여
   slideCard.className = "swiper-slide item";
   imgWrapper.className = "img-wrapper";
   picFirst.className = "pic-first";
@@ -83,8 +88,10 @@ const makeSlide = (item) => {
   heartBtn.className = "btn-heart";
   heartIcon.className = "heart bi bi-heart";
 
+  // 아이템의 할인 정보 불러오기
   const discountPriceInfo = getDiscountPrice(
-    item.discountPeriod,
+    item.discountStartDate,
+    item.discountEndDate,
     item.discountPrice,
     item.discountPercent,
     infoPirce
@@ -127,7 +134,8 @@ const makeSlide = (item) => {
 
 // 할인기간 내 할인가 표시
 const getDiscountPrice = (
-  discountDate,
+  discountStartDate,
+  discountEndDate,
   discountPrice,
   discountPercent,
   priceNode
@@ -137,11 +145,14 @@ const getDiscountPrice = (
   const year = time.getFullYear();
   const month = time.getMonth() + 1;
   const day = time.getDate();
+  const hour = time.getHours();
+  const minute = time.getMinutes();
 
-  const formattedCurrDate = `${year}-${month}-${day}`;
+  const currDate = `${year}-${month}-${day} ${hour}:${minute}`;
 
-  const currDate = new Date(formattedCurrDate);
-  const discountEndDate = new Date(discountDate);
+  const formattedCurrDate = new Date(currDate);
+  const formattedDiscountStartDate = new Date(discountStartDate);
+  const formattedDiscountEndDate = new Date(discountEndDate);
 
   let discountPriceNode = document.createElement("p");
   let discountPercentNode = document.createElement("span");
@@ -149,7 +160,11 @@ const getDiscountPrice = (
   discountPriceNode.className = "";
   discountPercentNode.className = "";
 
-  if (discountEndDate >= currDate) {
+  // 할인기간내 속한 아이템일 경우 discount price와 percent에 클래스 이름 부여
+  if (
+    formattedDiscountEndDate >= formattedCurrDate &&
+    formattedDiscountStartDate <= formattedCurrDate
+  ) {
     discountPriceNode.className = "discount-price";
     discountPercentNode.className = "discount-percent";
 
@@ -166,7 +181,7 @@ const getDiscountPrice = (
   return discountPriceNode;
 };
 
-// json data 불러오기
+// productInformation 데이터 불러오기
 const setJsonData = () => {
   let json = JSON.parse(JSON.stringify(productInformation));
   let fragment = document.createDocumentFragment();
@@ -212,7 +227,8 @@ const setJsonData = () => {
         a.className = "popup";
 
         const discountPriceInfo = getDiscountPrice(
-          it.discountPeriod,
+          it.discountStartDate,
+          it.discountEndDate,
           it.discountPrice,
           it.discountPercent,
           price
@@ -230,7 +246,7 @@ const setJsonData = () => {
         a.append(discountPriceInfo);
 
         setPopupByLink(a, it.popup, it.link);
-        setAriaHidden(popupWrapper, roundPosition, it.hidden);
+        setAriaHidden(popupWrapper, roundPosition, it.defaultShow);
 
         popupWrapper.append(a);
         round.append(innerRound);
@@ -254,28 +270,38 @@ const setJsonData = () => {
   });
 };
 
-// photo item hover 설정
+// 말풍선 처리 설정
 (function () {
   setJsonData();
 
   const photoItems = document.querySelectorAll(".photo");
 
   photoItems.forEach(function (photo) {
-    const popupWrapperItem = photo.querySelector(".popup__default");
-
+    const defaultRounudPositionItem = photo.querySelector(
+      ".round-position__default"
+    );
     const roundPositionItems = photo.getElementsByClassName("round-position");
+    const activeRoundPositionItems = photo.querySelectorAll(
+      '[data-hidden="true"]'
+    );
 
+    // 사진에서 마우스가 벗어나면 기본 말풍선이 나타남
     photo.addEventListener("mouseleave", function () {
-      popupWrapperItem.dataset.hidden = "true";
+      defaultRounudPositionItem.dataset.hidden = "true";
     });
 
+    // 좌표 아이콘에 마우스를 갖다댈 경우, 기존에 떠있던 말풍선이 사라지고 갖다댄 위치의 말풍선이 나타남
     for (let i = 0; i < roundPositionItems.length; i++) {
       roundPositionItems[i].addEventListener("mouseover", function () {
-        const current = photo.querySelectorAll('[data-hidden="true"]');
+        activeRoundPositionItems[0].dataset.hidden = "false";
+        this.dataset.hidden = "true";
+      });
+    }
 
-        current[0].dataset.hidden = "false";
-
-        this.querySelector(".popup").dataset.hidden = "true";
+    // 좌표 아이콘에서 마우스를 뗄 경우, 말풍선을 사라지게 함
+    for (let i = 0; i < roundPositionItems.length; i++) {
+      roundPositionItems[i].addEventListener("mouseleave", function () {
+        roundPositionItems[i].dataset.hidden = "false";
       });
     }
   });

@@ -1,29 +1,27 @@
 productInformation = [
-
-  {"id" : "1",
-    "dataList" : [ 
+  {"id" : "1", 
+    "dataList" : [  
   {
-    "data": [
+    "data": [ 
       {
-        "id" :1,
-        "axisX": "20%",
+        "axisX": "20%", 
         "axisY": "10%",
         "title": "DIMPARAPA 딤파라파 모델",
         "description": "통+뚜껑 콤비네이션 및 컬러 아이보리 브라운",
         "link": "https://www.google.com",
         "price": "10,000",
         "discountPrice": "9,000",
-        "discountPeriod": "2022-07-13",
+        "discountStartDate": "2022-7-13 10:00",
+        "discountEndDate": "2022-7-13 11:00",
         "discountPercent": "10",
         "direction": "right",
         "popup": true,
-        "hidden" : true,
+        "defaultShow" : true,
         "firstPictureSrc" : "./assets/fur_1.jpg",
         "secondPictureSrc" : "./assets/fur_2.jpg",
 
       },
       {
-        "id" : 2,
         "axisX": "30%",
         "axisY": "20%",
         "title": "DIMPA 딤파",
@@ -31,17 +29,17 @@ productInformation = [
         "link": "https://www.google.com",
         "price": "20,000",
         "discountPrice": "13,000",
-        "discountPeriod": "2022-06-28",
+        "discountStartDate": "2022-7-13 11:00",
+        "discountEndDate": "2022-7-13 14:00",
         "discountPercent": "10",
         "direction": "right",
         "popup": false,
-        "hidden" : false,
+        "defaultShow" : false,
         "firstPictureSrc" : "./assets/fur_1.jpg",
         "secondPictureSrc" : "./assets/fur_2.jpg",
 
       },
       {
-        "id" : 3,
         "axisX": "50%",
         "axisY": "50%",
         "title": "NISSEDAL 니세달",
@@ -49,11 +47,12 @@ productInformation = [
         "link": "https://www.google.com",
         "price": "9,900",
         "discountPrice": "8,000",
-        "discountPeriod":  "2022-07-14",
+        "discountStartDate": "2022-7-13 10:00",
+        "discountEndDate": "2022-7-13 11:00",
         "discountPercent": "10",
         "direction": "bottom",
         "popup": true,
-        "hidden" : false,
+        "defaultShow" : false,
         "firstPictureSrc" : "./assets/fur_1.jpg",
         "secondPictureSrc" : "./assets/fur_2.jpg",
 
@@ -63,7 +62,6 @@ productInformation = [
   {
     "data": [
       {
-        "id" : 1,
         "axisX": "10%",
         "axisY": "20%",
         "title": "GRADVIS 그라드비스",
@@ -71,17 +69,17 @@ productInformation = [
         "link": "https://www.google.com",
         "price": "11,200",
         "discountPrice": "3,000",
-        "discountPeriod": "2022-06-28",
+        "discountStartDate": "2022-7-13 10:00",
+        "discountEndDate": "2022-7-13 11:00",
         "discountPercent": "10",
         "direction": "right",
         "popup": false,
-        "hidden" : true,
+        "defaultShow" : true,
         "firstPictureSrc" : "./assets/fur_1.jpg",
         "secondPictureSrc" : "./assets/fur_2.jpg",
 
       },
       {
-        "id" : 2,
         "axisX": "70%",
         "axisY": "50%",
         "title": "RINNIG 린니그",
@@ -89,11 +87,12 @@ productInformation = [
         "link": "https://www.google.com",
         "price": "13,000",
         "discountPrice": "2,000",
-        "discountPeriod": "2022-06-28",
+        "discountStartDate": "2022-7-13 10:00",
+        "discountEndDate": "2022-7-13 11:00",
         "discountPercent": "10",
         "direction": "left",
         "popup": true,
-        "hidden" : false,
+        "defaultShow" : false,
         "firstPictureSrc" : "./assets/fur_1.jpg",
         "secondPictureSrc" : "./assets/fur_2.jpg",
 
@@ -107,11 +106,12 @@ productInformation = [
         "link": "https://www.google.com",
         "price": "4,000",
         "discountPrice": "2,000",
-        "discountPeriod": "2022-06-28",
+        "discountStartDate": "2022-7-13 10:00",
+        "discountEndDate": "2022-7-13 11:00",
         "discountPercent": "10",
         "direction": "top",
         "popup": true,
-        "hidden" : false,
+        "defaultShow" : false,
         "firstPictureSrc" : "./assets/fur_1.jpg",
         "secondPictureSrc" : "./assets/fur_2.jpg",
       }
@@ -124,7 +124,6 @@ productInformation = [
       {
         "data": [
           {
-            "id" :1,
             "axisX": "20%",
             "axisY": "10%",
             "title": "DIMPARAPA 딤파라파 모델",
@@ -132,17 +131,17 @@ productInformation = [
             "link": "https://www.google.com",
             "price": "10,000",
             "discountPrice": "9,000",
-            "discountPeriod": "2022-07-13",
+            "discountStartDate": "2022-7-13 10:00",
+            "discountEndDate": "2022-7-13 11:00",
             "discountPercent": "10",
             "direction": "right",
             "popup": true,
-            "hidden" : true,
+            "defaultShow" : true,
             "firstPictureSrc" : "./assets/fur_1.jpg",
             "secondPictureSrc" : "./assets/fur_2.jpg",
     
           },
           {
-            "id" :2,
             "axisX": "30%",
             "axisY": "20%",
             "title": "DIMPA 딤파",
@@ -150,17 +149,17 @@ productInformation = [
             "link": "https://www.google.com",
             "price": "20,000",
             "discountPrice": "13,000",
-            "discountPeriod": "2022-06-28",
+            "discountStartDate": "2022-7-13 10:00",
+        "discountEndDate": "2022-7-13 11:00",
             "discountPercent": "10",
             "direction": "right",
             "popup": false,
-            "hidden" : false,
+            "defaultShow" : false,
             "firstPictureSrc" : "./assets/fur_1.jpg",
             "secondPictureSrc" : "./assets/fur_2.jpg",
     
           },
           {
-            "id" :3,
             "axisX": "50%",
             "axisY": "50%",
             "title": "NISSEDAL 니세달",
@@ -168,11 +167,12 @@ productInformation = [
             "link": "https://www.google.com",
             "price": "9,900",
             "discountPrice": "8,000",
-            "discountPeriod":  "2022-07-14",
+            "discountStartDate": "2022-7-13 10:00",
+            "discountEndDate": "2022-7-13 11:00",
             "discountPercent": "10",
             "direction": "bottom",
             "popup": true,
-            "hidden" : false,
+            "defaultShow" : false,
             "firstPictureSrc" : "./assets/fur_1.jpg",
             "secondPictureSrc" : "./assets/fur_2.jpg",
     
